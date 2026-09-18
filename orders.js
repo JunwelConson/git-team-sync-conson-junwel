@@ -19,7 +19,7 @@ function calculateLoyaltyPoints(order) {
   const basePoints = Math.round(order.total / 10);
 
   if (order.total > 100) {
-    return basePoints * 1.5;
+    return basePoints * 2;
   }
 
   return basePoints;
