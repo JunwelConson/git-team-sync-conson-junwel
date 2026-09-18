@@ -16,7 +16,13 @@ function cancelOrder(order) {
 }
 
 function calculateLoyaltyPoints(order) {
-  return Math.floor(order.total / 10);
+  const basePoints = Math.floor(order.total / 10);
+
+  if (order.total > 100) {
+    return basePoints * 1.5;
+  }
+
+  return basePoints;
 }
 
 module.exports = { createOrder, applyDiscount, cancelOrder, calculateLoyaltyPoints };
